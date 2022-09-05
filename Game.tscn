@@ -8,16 +8,10 @@ script = ExtResource( 1 )
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Data" type="TextEdit" parent="Control/Panel"]
 anchor_left = 0.1875
@@ -30,74 +24,10 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Level" type="Label" parent="Control/Panel"]
-anchor_left = 0.109375
-anchor_top = 0.16
-anchor_right = 0.171875
-anchor_bottom = 0.183333
-text = "Level: 0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Increase_Level" type="Button" parent="Control/Panel"]
-anchor_left = 0.109375
-anchor_top = 0.2
-anchor_right = 0.171875
-anchor_bottom = 0.306667
-text = "+"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Decrease_Level" type="Button" parent="Control/Panel"]
-anchor_left = 0.109375
-anchor_top = 0.32
-anchor_right = 0.171875
-anchor_bottom = 0.426667
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Health" type="Label" parent="Control/Panel"]
-anchor_left = 0.828125
-anchor_top = 0.16
-anchor_right = 0.890625
-anchor_bottom = 0.183333
-text = "Health: 0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Increase_Health" type="Button" parent="Control/Panel"]
-anchor_left = 0.828125
-anchor_top = 0.2
-anchor_right = 0.890625
-anchor_bottom = 0.306667
-text = "+"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Decrease_Health" type="Button" parent="Control/Panel"]
-anchor_left = 0.828125
-anchor_top = 0.32
-anchor_right = 0.890625
-anchor_bottom = 0.426667
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="SlotNumber" type="Label" parent="Control/Panel"]
 anchor_left = 0.1875
 anchor_top = 0.0533333
-anchor_right = 0.8125
+anchor_right = 0.671875
 anchor_bottom = 0.0933333
 text = "Slot Number : 0"
 align = 1
@@ -106,7 +36,89 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlayerNameEdit" type="LineEdit" parent="Control/Panel"]
+[node name="Reset" type="Button" parent="Control/Panel"]
+anchor_left = 0.671875
+anchor_top = 0.0533333
+anchor_right = 0.8125
+anchor_bottom = 0.0933333
+text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LevelNode" type="Node" parent="Control/Panel"]
+
+[node name="Level" type="Label" parent="Control/Panel/LevelNode"]
+anchor_left = 0.109375
+anchor_top = 0.16
+anchor_right = 0.171875
+anchor_bottom = 0.183333
+margin_bottom = 0.000205994
+text = "Level: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Increase_Level" type="Button" parent="Control/Panel/LevelNode"]
+anchor_left = 0.109375
+anchor_top = 0.2
+anchor_right = 0.171875
+anchor_bottom = 0.306667
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Decrease_Level" type="Button" parent="Control/Panel/LevelNode"]
+anchor_left = 0.109375
+anchor_top = 0.32
+anchor_right = 0.171875
+anchor_bottom = 0.426667
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HealthNode" type="Node" parent="Control/Panel"]
+
+[node name="Health" type="Label" parent="Control/Panel/HealthNode"]
+anchor_left = 0.828125
+anchor_top = 0.16
+anchor_right = 0.890625
+anchor_bottom = 0.183333
+margin_bottom = 0.000205994
+text = "Health: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Increase_Health" type="Button" parent="Control/Panel/HealthNode"]
+anchor_left = 0.828125
+anchor_top = 0.2
+anchor_right = 0.890625
+anchor_bottom = 0.306667
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Decrease_Health" type="Button" parent="Control/Panel/HealthNode"]
+anchor_left = 0.828125
+anchor_top = 0.32
+anchor_right = 0.890625
+anchor_bottom = 0.426667
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PlayerNode" type="Node" parent="Control/Panel"]
+
+[node name="PlayerNameEdit" type="LineEdit" parent="Control/Panel/PlayerNode"]
 anchor_left = 0.375
 anchor_top = 0.493333
 anchor_right = 0.625
@@ -118,11 +130,12 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlayerName" type="Label" parent="Control/Panel"]
+[node name="PlayerName" type="Label" parent="Control/Panel/PlayerNode"]
 anchor_left = 0.375
 anchor_top = 0.466667
 anchor_right = 0.625
 anchor_bottom = 0.49
+margin_bottom = 0.000183105
 text = "Player Name"
 align = 1
 valign = 1
@@ -130,7 +143,9 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="SaveSlot1" type="Button" parent="Control/Panel"]
+[node name="SaveSlots" type="Node" parent="Control/Panel"]
+
+[node name="SaveSlot1" type="Button" parent="Control/Panel/SaveSlots"]
 anchor_left = 0.109375
 anchor_top = 0.6
 anchor_right = 0.34375
@@ -140,7 +155,29 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="LoadSlot1" type="Button" parent="Control/Panel"]
+[node name="SaveSlot2" type="Button" parent="Control/Panel/SaveSlots"]
+anchor_left = 0.382813
+anchor_top = 0.6
+anchor_right = 0.617188
+anchor_bottom = 0.706667
+text = "Save Slot 2"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SaveSlot3" type="Button" parent="Control/Panel/SaveSlots"]
+anchor_left = 0.65625
+anchor_top = 0.6
+anchor_right = 0.890625
+anchor_bottom = 0.706667
+text = "Save Slot 3"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LoadSlots" type="Node" parent="Control/Panel"]
+
+[node name="LoadSlot1" type="Button" parent="Control/Panel/LoadSlots"]
 anchor_left = 0.109375
 anchor_top = 0.72
 anchor_right = 0.34375
@@ -151,28 +188,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="DeleteSlot1" type="Button" parent="Control/Panel"]
-anchor_left = 0.109375
-anchor_top = 0.84
-anchor_right = 0.34375
-anchor_bottom = 0.946667
-margin_top = 3.05176e-05
-text = "Deşlete Slot 1"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="SaveSlot2" type="Button" parent="Control/Panel"]
-anchor_left = 0.382813
-anchor_top = 0.6
-anchor_right = 0.617188
-anchor_bottom = 0.706667
-text = "Save Slot 2"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="LoadSlot2" type="Button" parent="Control/Panel"]
+[node name="LoadSlot2" type="Button" parent="Control/Panel/LoadSlots"]
 anchor_left = 0.382813
 anchor_top = 0.72
 anchor_right = 0.617188
@@ -183,28 +199,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="DeleteSlot2" type="Button" parent="Control/Panel"]
-anchor_left = 0.382813
-anchor_top = 0.84
-anchor_right = 0.617188
-anchor_bottom = 0.946667
-margin_top = 3.05176e-05
-text = "Delete Slot 2"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="SaveSlot3" type="Button" parent="Control/Panel"]
-anchor_left = 0.65625
-anchor_top = 0.6
-anchor_right = 0.890625
-anchor_bottom = 0.706667
-text = "Save Slot 3"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="LoadSlot3" type="Button" parent="Control/Panel"]
+[node name="LoadSlot3" type="Button" parent="Control/Panel/LoadSlots"]
 anchor_left = 0.65625
 anchor_top = 0.72
 anchor_right = 0.890625
@@ -215,7 +210,31 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="DeleteSlot3" type="Button" parent="Control/Panel"]
+[node name="DeleteSlots" type="Node" parent="Control/Panel"]
+
+[node name="DeleteSlot1" type="Button" parent="Control/Panel/DeleteSlots"]
+anchor_left = 0.109375
+anchor_top = 0.84
+anchor_right = 0.34375
+anchor_bottom = 0.946667
+margin_top = 3.05176e-05
+text = "Deşlete Slot 1"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="DeleteSlot2" type="Button" parent="Control/Panel/DeleteSlots"]
+anchor_left = 0.382813
+anchor_top = 0.84
+anchor_right = 0.617188
+anchor_bottom = 0.946667
+margin_top = 3.05176e-05
+text = "Delete Slot 2"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="DeleteSlot3" type="Button" parent="Control/Panel/DeleteSlots"]
 anchor_left = 0.65625
 anchor_top = 0.84
 anchor_right = 0.890625
@@ -226,16 +245,17 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[connection signal="pressed" from="Control/Panel/Increase_Level" to="." method="_on_Increase_Level_pressed"]
-[connection signal="pressed" from="Control/Panel/Decrease_Level" to="." method="_on_Decrease_Level_pressed"]
-[connection signal="pressed" from="Control/Panel/Increase_Health" to="." method="_on_Increase_Health_pressed"]
-[connection signal="pressed" from="Control/Panel/Decrease_Health" to="." method="_on_Decrease_Health_pressed"]
-[connection signal="pressed" from="Control/Panel/SaveSlot1" to="." method="_on_SaveSlot1_pressed"]
-[connection signal="pressed" from="Control/Panel/LoadSlot1" to="." method="_on_LoadSlot1_pressed"]
-[connection signal="pressed" from="Control/Panel/DeleteSlot1" to="." method="_on_DeleteSlot1_pressed"]
-[connection signal="pressed" from="Control/Panel/SaveSlot2" to="." method="_on_SaveSlot2_pressed"]
-[connection signal="pressed" from="Control/Panel/LoadSlot2" to="." method="_on_LoadSlot2_pressed"]
-[connection signal="pressed" from="Control/Panel/DeleteSlot2" to="." method="_on_DeleteSlot2_pressed"]
-[connection signal="pressed" from="Control/Panel/SaveSlot3" to="." method="_on_SaveSlot3_pressed"]
-[connection signal="pressed" from="Control/Panel/LoadSlot3" to="." method="_on_LoadSlot3_pressed"]
-[connection signal="pressed" from="Control/Panel/DeleteSlot3" to="." method="_on_DeleteSlot3_pressed"]
+[connection signal="pressed" from="Control/Panel/Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="Control/Panel/LevelNode/Increase_Level" to="." method="_on_Increase_Level_pressed"]
+[connection signal="pressed" from="Control/Panel/LevelNode/Decrease_Level" to="." method="_on_Decrease_Level_pressed"]
+[connection signal="pressed" from="Control/Panel/HealthNode/Increase_Health" to="." method="_on_Increase_Health_pressed"]
+[connection signal="pressed" from="Control/Panel/HealthNode/Decrease_Health" to="." method="_on_Decrease_Health_pressed"]
+[connection signal="pressed" from="Control/Panel/SaveSlots/SaveSlot1" to="." method="_on_SaveSlot1_pressed"]
+[connection signal="pressed" from="Control/Panel/SaveSlots/SaveSlot2" to="." method="_on_SaveSlot2_pressed"]
+[connection signal="pressed" from="Control/Panel/SaveSlots/SaveSlot3" to="." method="_on_SaveSlot3_pressed"]
+[connection signal="pressed" from="Control/Panel/LoadSlots/LoadSlot1" to="." method="_on_LoadSlot1_pressed"]
+[connection signal="pressed" from="Control/Panel/LoadSlots/LoadSlot2" to="." method="_on_LoadSlot2_pressed"]
+[connection signal="pressed" from="Control/Panel/LoadSlots/LoadSlot3" to="." method="_on_LoadSlot3_pressed"]
+[connection signal="pressed" from="Control/Panel/DeleteSlots/DeleteSlot1" to="." method="_on_DeleteSlot1_pressed"]
+[connection signal="pressed" from="Control/Panel/DeleteSlots/DeleteSlot2" to="." method="_on_DeleteSlot2_pressed"]
+[connection signal="pressed" from="Control/Panel/DeleteSlots/DeleteSlot3" to="." method="_on_DeleteSlot3_pressed"]

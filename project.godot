@@ -12,6 +12,7 @@ config_version=4
 
 config/name="Godot - JSON Save Slots Demo"
 run/main_scene="res://Game.tscn"
+config/use_custom_user_dir=true
 config/icon="res://icon.png"
 
 [autoload]
